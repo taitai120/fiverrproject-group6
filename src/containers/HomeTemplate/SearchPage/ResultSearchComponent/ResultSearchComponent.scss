@@ -1,0 +1,46 @@
+@use "../../../../scss/" as *;
+
+.searchpage__result {
+  @include paddingAll;
+
+  .result__container {
+    background: #f5f5f5;
+    padding: 1rem 2rem;
+
+    h1 {
+      font-size: $font-size-9;
+      font-weight: $font-weight-2;
+      color: #111;
+    }
+
+    p {
+      font-size: $font-size-4;
+      font-weight: $font-weight-2;
+      color: $text-color;
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .searchpage {
+    .searchpage__result {
+      @include paddingLarge;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .searchpage {
+    .searchpage__result {
+      @include paddingMedium;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .searchpage {
+    .searchpage__result {
+      @include paddingSmall;
+    }
+  }
+}

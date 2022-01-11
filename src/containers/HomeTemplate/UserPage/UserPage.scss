@@ -1,0 +1,227 @@
+@use "../../../scss/" as *;
+
+.userpage {
+  margin-top: 120px;
+
+  .userpage__container {
+    @include paddingAll;
+    padding-top: 3rem;
+    display: flex;
+    background: #f7f7f7;
+
+    .userpage__profile {
+      flex: 0.3;
+
+      .userpage__profile__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 3rem;
+        border: 1px solid #dadbdd;
+        background: #fff;
+
+        .ant-avatar-string {
+          font-size: $font-size-10;
+        }
+
+        .profile__info__detail {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .detail__name {
+            margin-top: 1rem;
+            p {
+              font-size: $font-size-6;
+              font-weight: $font-weight-2;
+              color: black;
+            }
+          }
+        }
+
+        .profile__info__address {
+          width: 80%;
+          display: flex;
+          flex-direction: column;
+          align-content: flex-start;
+          border-top: 1px solid lightgrey;
+          padding-top: 1rem;
+          margin-top: 1rem;
+
+          .address__from {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            span {
+              svg {
+                margin-right: 0.5rem;
+              }
+            }
+
+            p {
+              color: black;
+              font-weight: $font-weight-2;
+            }
+          }
+
+          .address__member {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            span {
+              svg {
+                margin-right: 0.5rem;
+              }
+            }
+
+            p {
+              color: black;
+              font-weight: $font-weight-2;
+            }
+          }
+        }
+      }
+
+      .userpage__profile__social {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #dadbdd;
+        background: #fff;
+        padding: 0 2rem;
+        padding-top: 2rem;
+        margin-top: 3rem;
+
+        .userpage__profile__description {
+        }
+
+        .userpage__profile__language {
+          border-top: 1px solid lightgrey;
+          margin-bottom: 1rem;
+          padding-top: 1rem;
+        }
+
+        .userpage__profile__account {
+          border-top: 1px solid lightgrey;
+          margin-bottom: 1rem;
+          padding-top: 1rem;
+        }
+
+        .userpage__profile__skill {
+          border-top: 1px solid lightgrey;
+          margin-bottom: 1rem;
+          padding-top: 1rem;
+        }
+
+        .userpage__profile__certification {
+          border-top: 1px solid lightgrey;
+          margin-bottom: 1rem;
+          padding-top: 1rem;
+        }
+      }
+    }
+
+    .userpage__job {
+      flex: 0.7;
+      padding-left: 5rem;
+
+      .userpage__job__container {
+        background: #fff;
+
+        .userpage__job__item {
+          display: flex;
+          padding: 0 1rem;
+          padding-top: 1rem;
+          margin-bottom: 1rem;
+
+          .job__item__image {
+            margin-right: 1rem;
+          }
+
+          .job__item__detail {
+            display: flex;
+            flex-direction: column;
+
+            .detail__btn {
+              display: flex;
+              margin-top: 1rem;
+
+              button {
+                padding: 0.5rem 1rem;
+                margin-right: 0.5rem;
+                cursor: pointer;
+
+                a {
+                  text-decoration: none;
+                  color: black;
+                }
+              }
+            }
+          }
+        }
+
+        .userpage__job__item:not(:first-child) {
+          border-top: 1px solid $text-color;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .userpage {
+    .userpage__container {
+      @include paddingLarge;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .userpage {
+    .userpage__container {
+      @include paddingMedium;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .userpage {
+    .userpage__container {
+      flex-direction: column;
+
+      .userpage__profile {
+        flex: 1;
+      }
+
+      .userpage__job {
+        flex: 1;
+        margin-top: 3rem;
+        padding-left: 0;
+        background: #fff;
+
+        .userpage__job__container {
+          .userpage__job__item {
+            align-items: flex-start;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .userpage {
+    .userpage__container {
+      @include paddingSmall;
+
+      .userpage__job {
+        .userpage__job__container {
+          .userpage__job__item {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}

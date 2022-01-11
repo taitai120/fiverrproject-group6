@@ -1,0 +1,146 @@
+@use "../../../../scss/" as *;
+@import "node_modules/react-modal-video/scss/modal-video.scss";
+
+.guides {
+  background: #f1fdf7;
+
+  .guides__container {
+    @include paddingAll;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .guides__left {
+      padding-right: 11%;
+
+      h1 {
+        color: #404145;
+      }
+
+      ul {
+        li {
+          margin: 1rem 0;
+
+          h6 {
+            font-size: $font-size-5;
+            color: #404145;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+
+            span {
+              margin-right: 0.8rem;
+            }
+
+            svg {
+              fill: rgb(122, 125, 133);
+              min-width: 24px;
+              height: 24px;
+            }
+          }
+
+          p {
+            font-size: $font-size-4;
+            color: #62646a;
+            line-height: 28px;
+          }
+        }
+      }
+    }
+
+    .guides__right {
+      .guides__image {
+        picture {
+          cursor: pointer;
+          position: relative;
+          display: block;
+
+          &:after {
+            content: "";
+            position: absolute;
+            background: url("https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/desktop-play-button.c1196d6.png")
+              no-repeat;
+            background-size: 80px;
+            top: 50%;
+            left: 50%;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .guides {
+    .guides__container {
+      .guides__left {
+        padding-right: 8%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .guides {
+    .guides__container {
+      @include paddingLarge;
+
+      .guides__left {
+        padding-right: 7%;
+      }
+
+      .guides__right {
+        .guides__image {
+          picture {
+            img {
+              width: 110%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .guides {
+    .guides__container {
+      @include paddingMedium;
+
+      .guides__left {
+        padding-right: 6%;
+      }
+
+      .guides__right {
+        .guides__image {
+          picture {
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .guides {
+    .guides__container {
+      @include paddingSmall;
+      flex-direction: column;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+
+      .guides__left {
+        padding-right: 2rem;
+      }
+    }
+  }
+}

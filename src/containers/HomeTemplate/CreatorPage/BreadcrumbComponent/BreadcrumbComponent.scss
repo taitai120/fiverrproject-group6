@@ -1,0 +1,12 @@
+@use "../../../../scss/" as *;
+
+.creatorpage__breadcrumb {
+  a {
+    color: #4a73e8 !important;
+    font-weight: $font-weight-2;
+    &:hover {
+      color: #4a73e8 !important;
+      text-decoration: underline;
+    }
+  }
+}

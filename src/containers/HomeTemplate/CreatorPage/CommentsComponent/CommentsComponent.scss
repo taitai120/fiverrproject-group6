@@ -1,0 +1,85 @@
+@use "../../../../scss/" as *;
+
+.commentscomponent {
+  .commentscomponent__container {
+    margin-top: 3rem;
+
+    .commentscomponent__item {
+      border-top: 1px solid #efeff0;
+
+      .commentscomponent__title {
+        display: flex;
+        padding-top: 2rem;
+
+        .commentscomponent__title__avatar {
+          margin-right: 1rem;
+        }
+
+        .commentscomponent__title__user {
+          .text-weight {
+            font-weight: $font-weight-2;
+            font-size: $font-size-3;
+            color: #ffb33e;
+
+            span {
+              margin-left: 0.5rem;
+              margin-right: 0.5rem;
+            }
+          }
+
+          .commentscomponent__title__country {
+            display: flex;
+
+            img {
+              width: 24px;
+              height: 24px;
+              margin-right: 0.5rem;
+            }
+
+            p {
+              color: #62646a;
+            }
+          }
+        }
+      }
+
+      .commentscomponent__description {
+        p {
+          color: #404145;
+          font-weight: $font-weight-2;
+          font-size: $font-size-3;
+        }
+
+        .posted {
+          color: $text-color;
+          font-weight: $font-weight-2;
+        }
+      }
+
+      .commentscomponent__react {
+        display: flex;
+        align-items: center;
+        color: #404145;
+        font-weight: $font-weight-2;
+        font-size: $font-size-3;
+        padding-bottom: 2rem;
+
+        .react__thumbup {
+          margin-right: 1rem;
+          cursor: pointer;
+
+          span {
+            margin-right: 0.5rem;
+          }
+        }
+
+        .react__thumbdown {
+          cursor: pointer;
+          span {
+            margin-right: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+@use "../../../scss/" as *;
+
+.registerpage {
+  margin-top: 130px;
+
+  .registerpage__container {
+    @include paddingAll;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+
+    form {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid $text-color;
+      width: 40%;
+
+      h1 {
+        margin-bottom: 2rem;
+      }
+
+      .form-group {
+        width: 80%;
+        margin-bottom: 1rem;
+
+        input {
+          padding: 1rem 2rem;
+          width: 100%;
+          border: 1px solid $text-color;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      .group-btn {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 1rem;
+
+        button {
+          padding: 1rem 1.5rem;
+          color: white;
+          font-size: $font-size-3;
+          font-weight: $font-weight-2;
+          background: #1dbf73;
+          border: none;
+          outline: none;
+          cursor: pointer;
+
+          &:hover {
+            background: #19a463;
+          }
+
+          a {
+            color: white;
+            font-size: $font-size-3;
+            font-weight: $font-weight-2;
+            text-decoration: none;
+          }
+        }
+
+        .signin {
+          background: tomato;
+
+          &:hover {
+            background: rgb(100, 30, 18);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .registerpage {
+    .registerpage__container {
+      @include paddingLarge;
+
+      form {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .registerpage {
+    .registerpage__container {
+      @include paddingMedium;
+
+      form {
+        .form-group {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .registerpage {
+    .registerpage__container {
+      @include paddingSmall;
+
+      form {
+        .group-btn {
+          flex-direction: column;
+
+          button {
+            width: 100%;
+            margin-bottom: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@use "../../../scss/" as *;
+
+.categoriespage {
+  margin-top: 130px;
+  border-top: 1px solid lightgrey;
+
+  .categoriespage__container {
+    @include paddingAll;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    .categoriespage__title {
+      color: #404145;
+      margin-bottom: 2rem;
+      p {
+        margin-top: 1rem;
+        font-size: $font-size-4;
+      }
+    }
+
+    .categoriespage__content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 2rem;
+
+      .categoriespage__type {
+        h2 {
+          a {
+            color: #555;
+            text-decoration: none;
+            transition: 0.2s ease;
+            &:hover {
+              color: $text-hover;
+            }
+          }
+        }
+
+        ul {
+          li {
+            margin: 1rem 0;
+            a {
+              color: #404145;
+              text-decoration: none;
+              transition: 0.2s ease;
+              &:hover {
+                color: $text-hover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .categoriespage {
+    .categoriespage__container {
+      @include paddingLarge;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .categoriespage {
+    .categoriespage__container {
+      @include paddingMedium;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .categoriespage {
+    .categoriespage__container {
+      @include paddingSmall;
+
+      .categoriespage__content {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}

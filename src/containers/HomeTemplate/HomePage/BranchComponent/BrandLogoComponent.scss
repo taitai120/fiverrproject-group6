@@ -1,0 +1,49 @@
+@use "../../../../scss/" as *;
+
+.brand-logo {
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .brand-logo__trusted {
+    color: $text-color-light;
+    margin-right: -3rem;
+    font-weight: $font-weight-1;
+  }
+
+  .brand-logo__item {
+    @include paddingAll;
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      li {
+        padding: 1.5rem 2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .brand-logo {
+    .brand-logo__trusted {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .brand-logo {
+    .brand-logo__item {
+      @include paddingMedium;
+
+      ul {
+        flex-wrap: wrap;
+        li {
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
+  }
+}

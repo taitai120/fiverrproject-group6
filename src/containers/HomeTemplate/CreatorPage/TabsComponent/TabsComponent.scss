@@ -1,0 +1,106 @@
+@use "../../../../scss/" as *;
+
+.creatorpage__right {
+  .tabscomponent__container {
+    border: 1px solid #dadbdd;
+
+    .ant-tabs {
+      width: 100%;
+    }
+    .ant-tabs-nav-list {
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      .ant-tabs-tab {
+        width: 33.33%;
+        color: #7a7d85;
+        font-weight: $font-weight-2;
+        font-size: $font-size-4;
+      }
+
+      .ant-tabs-tab-active {
+        border-bottom: 3px solid #1dbf73 !important;
+        background: #fff;
+
+        .ant-tabs-tab-btn {
+          color: #1dbf73;
+        }
+      }
+    }
+  }
+
+  .tabscomponent__package {
+    padding: 0rem 1rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    .package__heading {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+
+      h3,
+      p {
+        font-size: $font-size-4;
+      }
+
+      p {
+        color: #62646a;
+        font-weight: $font-weight-2;
+        font-size: $font-size-5 !important;
+      }
+    }
+
+    .package__body {
+      color: #62646a;
+      font-weight: $font-weight-2;
+      margin-bottom: 1rem;
+    }
+
+    .package__footer {
+      display: flex;
+
+      .package__delivery {
+        display: flex;
+        align-items: flex-start;
+        margin-right: 1rem;
+        p {
+          color: #62646a;
+          font-weight: $font-weight-2;
+          margin-left: 0.5rem;
+        }
+      }
+
+      .package__revisions {
+        display: flex;
+        align-items: flex-start;
+        p {
+          color: #62646a;
+          font-weight: $font-weight-2;
+          margin-left: 0.5rem;
+        }
+      }
+    }
+
+    button {
+      width: 90%;
+      color: #fff;
+      background: #1dbf73;
+      padding: 0.7rem 1rem;
+      outline: none;
+      border: none;
+      border-radius: 4px;
+      font-size: $font-size-4;
+      font-weight: $font-weight-2;
+      align-self: center;
+      margin: 1rem 0;
+      cursor: pointer;
+      &:hover {
+        background: #19a463;
+      }
+    }
+  }
+}

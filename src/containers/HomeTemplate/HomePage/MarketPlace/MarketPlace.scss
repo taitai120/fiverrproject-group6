@@ -1,0 +1,86 @@
+@use "../../../../scss/" as *;
+
+.marketplace {
+  .marketplace__container {
+    @include paddingAll;
+    padding-top: 5rem;
+
+    h1 {
+      color: $text-color-heading;
+      margin-bottom: 4rem;
+    }
+
+    .marketplace__content {
+      ul {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+
+        li {
+          margin-bottom: 4rem;
+          text-align: center;
+
+          a {
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            color: #222325;
+            position: relative;
+
+            &:after {
+              content: "";
+              position: absolute;
+              top: 65%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 50px;
+              background: blue;
+              height: 1px;
+              transition: 0.2s;
+            }
+
+            &:hover:after {
+              width: 80px;
+              background: $text-hover;
+            }
+
+            img {
+              display: block;
+              width: 48px;
+              height: 48px;
+              margin: 0 auto;
+              margin-bottom: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .marketplace {
+    .marketplace__container {
+      @include paddingLarge;
+
+      .marketplace__content {
+        ul {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .marketplace {
+    .marketplace__container {
+      @include paddingMedium;
+
+      .marketplace__content {
+        ul {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
+}

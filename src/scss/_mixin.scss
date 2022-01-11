@@ -1,0 +1,24 @@
+@mixin flexBox($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin paddingAll {
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+@mixin paddingLarge {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+@mixin paddingMedium {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+@mixin paddingSmall {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}

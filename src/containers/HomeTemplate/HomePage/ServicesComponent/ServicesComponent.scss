@@ -1,0 +1,108 @@
+@use "../../../../scss/" as *;
+
+.services {
+  .services__container {
+    @include paddingAll;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    .services__title {
+      margin-bottom: 2rem;
+    }
+
+    .services__content {
+      position: relative;
+
+      .myarrow {
+        z-index: 10;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        padding: 10px;
+        transform: translateY(-50%);
+        background: white;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
+        cursor: pointer;
+      }
+
+      .myarrow-next {
+        right: -1.2rem;
+      }
+
+      .myarrow-prev {
+        left: -1.5rem;
+      }
+
+      .services__item {
+        position: relative;
+
+        .services__item__text {
+          color: white;
+          position: absolute;
+          top: 1rem;
+          left: 1rem;
+
+          p {
+            margin-bottom: 0.3rem;
+          }
+
+          h3 {
+            font-size: $font-size-6;
+          }
+        }
+
+        img {
+          object-fit: cover;
+          border-radius: 5px !important;
+          height: 352px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .services {
+    .services__container {
+      @include paddingLarge;
+
+      .services__content {
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .services {
+    .services__container {
+      @include paddingMedium;
+
+      .services__container {
+        // @include paddingSmall;
+        .services__content {
+          .myarrow-next {
+            right: -1.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .services {
+    .services__container {
+      // @include paddingSmall;
+      .services__content {
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .services {
+    .services__container {
+      @include paddingSmall;
+    }
+  }
+}

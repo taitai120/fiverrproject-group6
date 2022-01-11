@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import { Route, Switch, withRouter } from "react-router-dom";
+import { renderRoutesHome, renderRoutesAdmin } from "./routes";
+import { lazy, Suspense } from "react";
+import Loading from "./containers/HomeTemplate/components/Loading/Loading";
+import ScrollToTop from "./components/ScrollToTop";
 
-function App() {
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<Loading />}>
+      <ScrollToTop />
+      <Switch>
+        {renderRoutesHome(props.history)}
+        {renderRoutesAdmin(props.history)}
+        <Route
+          path="/auth"
+          exact
+          component={lazy(() => import("./containers/Admin/Auth"))}
+        />
+        <Route
+          path=""
+          component={lazy(() => import("./containers/PageNotFound"))}
+        />
+      </Switch>
+    </Suspense>
   );
 }
 
-export default App;
+export default withRouter(App);

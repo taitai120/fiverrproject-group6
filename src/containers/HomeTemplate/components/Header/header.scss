@@ -1,0 +1,353 @@
+@use "../../../../scss/" as *;
+
+.noscroll {
+  overflow-y: hidden;
+}
+
+.header-toggle-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  width: 25%;
+  height: 100%;
+  z-index: 9999;
+  transform: translateX(-1000px);
+  transition: 0.5s ease;
+
+  .header-toggle-nav-btn {
+    padding-top: 1rem;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+
+    button {
+      font-size: $font-size-3;
+      font-weight: $font-weight-2;
+      background: #1dbf73;
+      padding: 0.7rem 2.5rem;
+      border-radius: 10px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+      &:hover {
+        background: #19a463;
+      }
+    }
+  }
+
+  ul {
+    margin-left: 2rem;
+    li {
+      margin-bottom: 1rem;
+      a {
+        color: $text-color;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.shown-header-toggle {
+  transform: translateX(0px);
+}
+
+.header-toggle-nav-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1200;
+  display: none;
+}
+
+.shown-header-overlay {
+  display: block;
+}
+
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  height: 120px;
+
+  .header {
+    .header-wrapper {
+      @include paddingAll;
+      display: flex;
+      height: 80px;
+      align-items: center;
+
+      .header-menu {
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer;
+        display: none;
+        margin-right: 1rem;
+        rect {
+          fill: white;
+        }
+      }
+
+      .header-icon {
+        margin-right: 2rem;
+        svg {
+          fill: #fff;
+        }
+      }
+
+      // .header-search {
+      //   position: relative;
+      //   .header-search-icon {
+      //     position: absolute;
+      //     top: 50%;
+      //     left: 10px;
+      //     transform: translateY(-50%);
+      //   }
+      //   input {
+      //     padding: 0rem 2rem;
+      //     height: 30px;
+      //     outline: none;
+      //     border-style: inset;
+      //     border-width: 1px;
+      //     border-color: #dadbdd;
+      //     border-radius: 3px 0px 0px 3px;
+      //     box-shadow: none;
+      //     font-weight: $font-weight-1;
+      //     font-size: $font-size-3;
+      //   }
+      // }
+      .header-nav {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 1.2rem;
+        ul {
+          display: flex;
+
+          li {
+            a {
+              color: #fff;
+              font-size: $font-size-3;
+              font-weight: $font-weight-2;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+            button {
+              font-size: $font-size-3;
+              font-weight: $font-weight-2;
+              background: #1dbf73;
+              padding: 0.3rem 1rem;
+              border-radius: 10px;
+              outline: none;
+              border: none;
+              cursor: pointer;
+
+              &:hover {
+                color: #fff;
+              }
+            }
+            &:not(last-child) {
+              margin-right: 1.5rem;
+            }
+
+            .join {
+              color: $text-hover;
+              border: 1px solid $text-hover;
+              padding: 0.2rem 1rem;
+              border-radius: 3px;
+              &:hover {
+                color: white;
+                background: $button-hover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .categories {
+    border: 1px solid lightgrey;
+    transition: 0.5s ease;
+    display: none;
+    height: 40px;
+    @include paddingAll;
+
+    .categories-nav {
+      ul {
+        display: flex;
+        height: 40px;
+        align-items: center;
+        justify-content: space-between;
+
+        li {
+          position: relative;
+          line-height: 40px;
+          a {
+            text-decoration: none;
+            font-weight: $font-weight-1;
+            font-size: $font-size-3;
+            display: inline-block;
+          }
+
+          &:hover:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 5%;
+            left: 0;
+            background: $text-hover;
+          }
+        }
+      }
+    }
+  }
+}
+
+.shown {
+  z-index: 999;
+  .header {
+    background: white;
+    .header-wrapper {
+      .header-menu {
+        rect {
+          fill: #111;
+        }
+      }
+      .header-icon {
+        svg {
+          fill: #111;
+        }
+      }
+      .header-nav {
+        ul {
+          li {
+            a {
+              color: $text-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  .categories {
+    display: block;
+    background: white;
+    .categories-nav {
+      ul {
+        li {
+          a {
+            color: $text-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .main-header {
+    .categories {
+      padding: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .main-header {
+    .header {
+      .header-wrapper {
+        @include paddingLarge;
+        .header-menu {
+          display: block;
+        }
+      }
+    }
+    .categories {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .main-header {
+    .header {
+      .header-wrapper {
+        @include paddingMedium;
+      }
+    }
+  }
+
+  .header-toggle-nav {
+    width: 50%;
+
+    .header-toggle-nav-btn {
+      margin-left: 0.5rem;
+      margin-bottom: 1rem;
+      button {
+        color: white;
+        font-size: $font-size-2;
+        padding: 0.4rem 1.5rem;
+        border-radius: 5px;
+        background: rgb(245, 37, 79);
+      }
+    }
+
+    ul {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main-header {
+    .header {
+      .header-wrapper {
+        @include paddingSmall;
+
+        .header-nav {
+          ul {
+            li {
+              &:not(:last-child) {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .header-toggle-nav {
+    .header-toggle-nav-btn {
+      margin-left: 0.2rem;
+      button {
+        font-size: $font-size-1;
+        padding: 0.4rem 1rem;
+      }
+    }
+
+    ul {
+      margin-left: 0.2rem;
+    }
+  }
+}

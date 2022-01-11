@@ -1,0 +1,27 @@
+@use "../../../../scss/" as *;
+@import "node_modules/react-modal-video/scss/modal-video.scss";
+
+.howfiverworks {
+  button {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    color: #4a73e8;
+    font-size: $font-size-4;
+    background: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+
+    span {
+      margin-right: 0.3rem;
+    }
+
+    svg {
+      fill: #4a73e8;
+    }
+  }
+}

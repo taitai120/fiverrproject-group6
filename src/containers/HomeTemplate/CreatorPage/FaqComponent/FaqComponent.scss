@@ -1,0 +1,30 @@
+@use "../../../../scss/" as *;
+
+.creatorpage__left__about__faq {
+  margin-top: 3rem;
+  margin-bottom: 10rem;
+
+  .ant-collapse {
+    border: none;
+
+    .ant-collapse-item {
+      background: white !important;
+
+      .ant-collapse-header {
+        color: #62646a !important;
+        font-weight: $font-weight-2;
+        font-size: $font-size-4;
+      }
+
+      .ant-collapse-content {
+        color: #62646a;
+        font-weight: $font-weight-1;
+        font-size: $font-size-3;
+      }
+    }
+
+    .ant-collapse-item:last-child {
+      border: none;
+    }
+  }
+}
