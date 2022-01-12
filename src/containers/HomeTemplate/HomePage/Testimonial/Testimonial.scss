@@ -71,14 +71,27 @@
       line-height: 65px;
       z-index: 11;
       cursor: pointer;
+
+      .MuiSvgIcon-root {
+        width: 1em;
+        margin-bottom: 1rem;
+      }
     }
 
     .next {
       right: -1.5%;
+      .MuiSvgIcon-root {
+        width: 1em;
+        margin-left: 0.5rem;
+      }
     }
 
     .prev {
       left: -1.5%;
+      .MuiSvgIcon-root {
+        width: 1em;
+        margin-right: 0.5rem;
+      }
     }
 
     svg {

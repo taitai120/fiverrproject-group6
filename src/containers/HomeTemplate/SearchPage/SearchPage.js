@@ -33,7 +33,6 @@ function SearchPage() {
   }, []);
 
   const renderJobs = () => {
-    console.log(jobs);
     if (jobs.length === 0) {
       return (
         <div className="searchpage__empty">

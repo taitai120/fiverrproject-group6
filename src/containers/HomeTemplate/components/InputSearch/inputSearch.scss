@@ -9,14 +9,17 @@
 
   .search__icon {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 10px;
     transform: translateY(-50%);
+    svg {
+    }
   }
 
   input {
     color: #111;
     padding: 0rem 2rem;
+    padding-left: 2.5rem;
     height: 30px;
     outline: none;
     border-style: inset;

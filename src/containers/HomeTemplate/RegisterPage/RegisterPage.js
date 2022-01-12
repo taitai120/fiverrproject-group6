@@ -32,7 +32,12 @@ function RegisterPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!newUser.email || !newUser.password || !newUser.phone) {
+    if (
+      !newUser.name ||
+      !newUser.email ||
+      !newUser.password ||
+      !newUser.phone
+    ) {
       alert("Please fill fully your information");
     } else {
       dispatch(actRegisterUser(newUser, history));
